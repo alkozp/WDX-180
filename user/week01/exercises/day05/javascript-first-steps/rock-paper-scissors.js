@@ -1,3 +1,4 @@
+  //add comme
   // Function that returns a random move, e.g. rock, paper, scissors:
   function getRandomMove(){
     let pcMove = Math.floor( Math.random() * 3 ); // Will return a random number between 0, 1 and 2
