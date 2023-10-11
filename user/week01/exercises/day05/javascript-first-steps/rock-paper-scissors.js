@@ -54,7 +54,13 @@
     alert ("You are press CANCEL button.\nDon't give up - reload page for game again.");
   }
 
-
+  //for tests 
+  try {
+    if (global) {
+      global.getRandomMove = getRandomMove;
+          global.checkMove = checkMove;
+      }
+  } catch (e) {}
 
   //********************************* */
   // Don't worry about the code below. It's just there to test your code above.
@@ -101,3 +107,4 @@
 
   const gameResult10 = checkMove("pencil", "rock");
   console.log("Game Result 10: ", gameResult10); // Should be invalid move
+
