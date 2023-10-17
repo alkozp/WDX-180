@@ -1,13 +1,13 @@
 Week,Day,Concept,Task,Level,Confidence,Completed,Instructions
-2,2,HTML,Active learning: Inspecting a simple example,Beginner,0-10,FALSE,Submit your exercise in the appropriate folder. Stage - Commit - Push. Replace this field with the exercise solution URL
-2,2,HTML,Active learning: Experiment with character encoding,Beginner,0-10,FALSE,Submit your exercise in the appropriate folder. Stage - Commit - Push. Replace this field with the exercise solution URL
-2,2,HTML,Active learning: The description's use in search engines,Beginner,0-10,FALSE,Submit your exercise in the appropriate folder. Stage - Commit - Push. Replace this field with the exercise solution URL
-2,2,HTML,Active learning: applying CSS and JavaScript to a page,Beginner,0-10,FALSE,Submit your exercise in the appropriate folder. Stage - Commit - Push. Replace this field with the exercise solution URL
-2,2,HTML,Active learning: Giving our content structure,Beginner,0-10,FALSE,Submit your exercise in the appropriate folder. Stage - Commit - Push. Replace this field with the exercise solution URL
-2,2,HTML,Active learning: Marking up an unordered list,Beginner,0-10,FALSE,Submit your exercise in the appropriate folder. Stage - Commit - Push. Replace this field with the exercise solution URL
-2,2,HTML,Active learning: Marking up an ordered list,Beginner,0-10,FALSE,Submit your exercise in the appropriate folder. Stage - Commit - Push. Replace this field with the exercise solution URL
-2,2,HTML,Active learning: Marking up our recipe page,Beginner,0-10,FALSE,Submit your exercise in the appropriate folder. Stage - Commit - Push. Replace this field with the exercise solution URL
-2,2,HTML,Test your skills: HTML text fundamentals (3x Tasks),Beginner,0-10,FALSE,Submit your exercise in the appropriate folder. Stage - Commit - Push. Replace this field with the exercise solution URL
-2,2,HTML,Active learning: creating your own example link,Beginner,0-10,FALSE,Submit your exercise in the appropriate folder. Stage - Commit - Push. Replace this field with the exercise solution URL
-2,2,HTML,Active learning: creating a navigation menu,Beginner,0-10,FALSE,Submit your exercise in the appropriate folder. Stage - Commit - Push. Replace this field with the exercise solution URL
-2,2,HTML,Test your skills: Creating hyperlinks (3x Tasks),Beginner,0-10,FALSE,Submit your exercise in the appropriate folder. Stage - Commit - Push. Replace this field with the exercise solution URL
+2,2,HTML,Active learning: Inspecting a simple example,Beginner,10,TRUE,https://alkozp.github.io/WDX-180/user/week02/exercises/day02/the_head_metadata_in_html/title-example.html
+2,2,HTML,Active learning: Experiment with character encoding,Beginner,10,TRUE,https://alkozp.github.io/WDX-180/user/week02/exercises/day02/the_head_metadata_in_html/title-example.html
+2,2,HTML,Active learning: The description's use in search engines,Beginner,10,TRUE,https://alkozp.github.io/WDX-180/user/week02/exercises/day02/the_head_metadata_in_html/title-example.html
+2,2,HTML,Active learning: applying CSS and JavaScript to a page,Beginner,10,TRUE,https://alkozp.github.io/WDX-180/user/week02/exercises/day02/the_head_metadata_in_html/meta-example.html
+2,2,HTML,Active learning: Giving our content structure,Beginner,10,TRUE,https://alkozp.github.io/WDX-180/user/week02/exercises/day02/html_text_fundamentals/short-story.html
+2,2,HTML,Active learning: Marking up an unordered list,Beginner,10,TRUE,https://alkozp.github.io/WDX-180/user/week02/exercises/day02/html_text_fundamentals/shopping-list.html
+2,2,HTML,Active learning: Marking up an ordered list,Beginner,10,TRUE,https://alkozp.github.io/WDX-180/user/week02/exercises/day02/html_text_fundamentals/directions.html
+2,2,HTML,Active learning: Marking up our recipe page,Beginner,10,TRUE,https://alkozp.github.io/WDX-180/user/week02/exercises/day02/html_text_fundamentals/recipe-page2.html
+2,2,HTML,Test your skills: HTML text fundamentals (3x Tasks),Beginner,9,TRUE,https://alkozp.github.io/WDX-180/user/week02/exercises/day02/html_text_fundamentals/basic-text1.html https://alkozp.github.io/WDX-180/user/week02/exercises/day02/html_text_fundamentals/basic-text2.html https://alkozp.github.io/WDX-180/user/week02/exercises/day02/html_text_fundamentals/basic-text3.html
+2,2,HTML,Active learning: creating your own example link,Beginner,10,TRUE,https://alkozp.github.io/WDX-180/user/week02/exercises/day02/Creating_hyperlinks/index01.html
+2,2,HTML,Active learning: creating a navigation menu,Beginner,8,TRUE,https://alkozp.github.io/WDX-180/user/week02/exercises/day02/Creating_hyperlinks/index02.html
+2,2,HTML,Test your skills: Creating hyperlinks (3x Tasks),Beginner,9,TRUE,https://alkozp.github.io/WDX-180/user/week02/exercises/day02/Creating_hyperlinks/test01.html https://alkozp.github.io/WDX-180/user/week02/exercises/day02/Creating_hyperlinks/test02.html https://alkozp.github.io/WDX-180/user/week02/exercises/day02/Creating_hyperlinks/test03.html
