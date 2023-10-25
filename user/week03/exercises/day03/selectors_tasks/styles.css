@@ -1,6 +1,9 @@
+/*test*/
 /**{
     background-color:yellow;
 }*/
+
+
 /*Task01*/
 h1 {
     color:blue;
@@ -65,3 +68,13 @@ ul.list > li {
 }
 
 /*Task05*/
+a[title] {
+  border-color: pink;
+  background-color: yellow;
+}
+a[href*='contact']{
+  border-color: orange;
+}
+a[href^='https'] {
+  border-color: green
+}
