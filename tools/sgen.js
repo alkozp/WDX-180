@@ -18,6 +18,24 @@ const {
   info,
   xmark
 } = require("./utils");
+const wdxTemplateRegexes = {
+
+  weekRegex:          /\{\{\s?WDX:\s?WEEK\s?\}\}/gi,
+  titleRegex:         /\{\{\s?WDX:\s?TITLE\s?\}\}/gi,
+  dayRegex:           /\{\{\s?WDX:\s?DAY\s?\}\}/gi,
+  scheduleRegex:      /\{\{\s?WDX:\s?DAILY_SCHEDULE\s?\}\}/gi,
+  studyPlanRegex:     /\{\{\s?WDX:\s?STUDY_PLAN\s?\}\}/gi,
+  summaryRegex:       /\{\{\s?WDX:\s?SUMMARY\s?\}\}/gi,
+  exercisesRegex:     /\{\{\s?WDX:\s?EXERCISES\s?\}\}/gi,
+  extrasRegex:        /\{\{\s?WDX:\s?EXTRAS\s?\}\}/gi,
+  attributionsRegex:  /\{\{\s?WDX:\s?ATTRIBUTIONS\s?\}\}/gi,
+  includesRegex:      /\{\{\s?WDX:\s?INCLUDES:(.*)\s?\}\}/gi,
+  dateUpdatedRegex:   /\{\{\s?WDX:\s?DATE_UPDATED\s?\}\}/gi,
+  weeklyContentRegex: /\{\{\s?WDX:\s?WEEKLY_CONTENT\s?\}\}/gi
+
+}
+const modulesFolder  = path.join("curriculum", "modules");
+const includesFolder = path.join("curriculum", "schedule", "includes");
 
 // 1) OUR FUNCTIONS: ===========================================================
 
@@ -129,13 +147,47 @@ function createSyllabusFromMarkdownText({ configYaml, textContent }) {
 
 }
 
+function replaceInclude({ day, numOfWeek }){
+
+  const {
+
+    weekRegex,
+    dayRegex
+
+  } = wdxTemplateRegexes;
+
+  return function( match, group1, string){
+
+    const includeFile = path.join( includesFolder, group1.trim() + ".md" );
+    try {
+
+      const contents = fs.readFileSync(includeFile, "utf-8");
+      return contents
+      .replace(weekRegex,String(numOfWeek).padStart(2,"0"))
+      .replace(dayRegex, String(day).padStart(2,"0"));
+
+    } catch(e) {
+
+      console.log(e);
+      return `<!-- Missing include file: ${group1.trim()}.md -->`
+
+    }
+
+  }
+}
+
 // Mini-parsers: (to be moved elsewhere and unit-tested)
 function parseWeeklyPatterns({ raw, numOfWeek, weeklyContent, title }){
 
-  const weekRegex          = /\{\{\s?WDX:\s?WEEK\s?\}\}/gi;
-  const titleRegex         = /\{\{\s?WDX:\s?TITLE\s?\}\}/gi;
-  const dateUpdatedRegex   = /\{\{\s?WDX:\s?DATE_UPDATED\s?\}\}/gi;
-  const weeklyContentRegex = /\{\{\s?WDX:\s?WEEKLY_CONTENT\s?\}\}/gi;
+  const {
+
+    weekRegex,
+    titleRegex,
+    dateUpdatedRegex,
+    weeklyContentRegex,
+    includesRegex
+
+  } = wdxTemplateRegexes;
 
   const date = new Date();
   const DDMMYYYY = `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}` 
@@ -144,132 +196,164 @@ function parseWeeklyPatterns({ raw, numOfWeek, weeklyContent, title }){
   .replace(weekRegex, `Week ${numOfWeek}`)
   .replace(titleRegex, title)
   .replace(dateUpdatedRegex, DDMMYYYY)
-  .replace(weeklyContentRegex, weeklyContent);
+  .replace(weeklyContentRegex, weeklyContent)
+  .replace(includesRegex, replaceInclude({ numOfWeek }));
 
   return newRaw;
+}
+
+function generateProgressSheet(){
+
+}
+
+function replaceSectionFromObject( section, contentObject ){
+
+  return function( match ){
+
+    let dailyScheduleSection = "";
+
+    if (contentObject[section].nextSection){
+
+      dailyScheduleSection = contentObject[section].heading + contentObject[section].nextSection;
+
+    } else {
+
+      dailyScheduleSection = `<!-- ${contentObject[section].text.trim()} -->`
+
+    }
+
+    return dailyScheduleSection;
+  }
+
 }
 
 function parseDailyContent({ entry, dailyMarkdownTokens, numOfWeek }){
 
   const [ day, dayMeta ] = entry;
 
-  if ( dayMeta.module ){
+  if ( !dayMeta.module ){
+    return;
+  }
 
-    const modulesFolder  = path.join("curriculum", "modules");
-    const includesFolder = path.join("curriculum", "schedule", "includes");
-    const dailyModule    = path.join( modulesFolder, dayMeta.module, "index.md" ); 
-    const moduleMarkdown = fs.readFileSync(dailyModule, "utf-8");
-    const { content, data: fm, orig } = matter(moduleMarkdown);
-    const moduleMarkdownTokens = marked.lexer(content);
+  const dailyModule    = path.join( modulesFolder, dayMeta.module, "index.md" ); 
+  const moduleMarkdown = fs.readFileSync(dailyModule, "utf-8");
+  const { content, data: fm, orig } = matter(moduleMarkdown);
+  const moduleMarkdownTokens = marked.lexer(content);
 
-    const dailyContentObject = moduleMarkdownTokens
-    .filter( t => t.type !== "space" )
-    .reduce((acc,token,idx,tokens)=>{
+  // Create Object that contains content that will replace the {{ WDX }} patterns inside the template:
+  const dailyContentObject = moduleMarkdownTokens
+  .filter( t => t.type !== "space" )
+  .reduce((acc,token,idx,tokens)=>{
 
-      if ( token.type === "heading" && token.depth === 3 ){
+    if ( token.type === "heading" && token.depth === 3 ){
 
-        const nextToken = tokens[idx+1];
-        const isNextTokenNotAHeading = nextToken && nextToken.type !== "heading";
-        const isNextTokenNotAHeading3 = nextToken && nextToken.type === "heading" && nextToken.depth !== 3;
+      const nextToken = tokens[idx+1];
+      const isNextTokenNotAHeading = nextToken && nextToken.type !== "heading";
+      const isNextTokenNotAHeading3 = nextToken && nextToken.type === "heading" && nextToken.depth !== 3;
 
-        if ( isNextTokenNotAHeading || isNextTokenNotAHeading3 ){
+      if ( isNextTokenNotAHeading || isNextTokenNotAHeading3 ){
 
-          let nextSection = [];
-          let nextIdx = idx + 1;
-          let nextToken = tokens[nextIdx];
+        let nextSection = [];
+        let nextIdx = idx + 1;
+        let nextToken = tokens[nextIdx];
 
-          while ( 
-            nextToken 
-            && 
-            ( nextToken.type !== "heading" 
-              || ( nextToken.type === "heading" && nextToken.depth !== 3 )
-            ) 
-          ){
+        while ( 
+          nextToken 
+          && 
+          ( nextToken.type !== "heading" 
+            || ( nextToken.type === "heading" && nextToken.depth !== 3 )
+          ) 
+        ){
+
+          // Search for WDX:META patterns:
+          const wdxMetaRegex = /<!-- WDX:META:PROGRESS -->\n/i;
+          const hasWdxMeta = nextToken.raw.match(wdxMetaRegex); 
+
+          if ( hasWdxMeta ){
+            nextToken.raw = nextToken.raw.replace(wdxMetaRegex, "");
+            console.log(hasWdxMeta);
+            nextToken = tokens[++nextIdx];
+
+          } else {
+
             nextSection.push(nextToken.raw);
             nextToken = tokens[++nextIdx];
+
           }
-
-          acc[token.text.trim()] = { 
-            heading: token.raw,
-            text: token.text,
-            nextSection: nextSection.map((t,idx,array) =>{ 
-              const newline = ( idx === 0 ) ? "" : "\n\n"; 
-              return newline + t; 
-            }).join("")
-
-          };
-
-        } else {
-
-          acc[token.text.trim()] = {
-            text: token.text,
-            heading: token.raw
-          };
-
+          
         }
 
+        acc[token.text.trim()] = { 
+          heading: token.raw,
+          text: token.text,
+          nextSection: nextSection.map((t,idx,array) =>{ 
+            const newline = ( idx === 0 ) ? "" : "\n\n"; 
+            return newline + t; 
+          }).join("")
+
+        };
+
+      } else {
+
+        acc[token.text.trim()] = {
+          text: token.text,
+          heading: token.raw
+        };
+
       }
 
-      return acc;
+    }
 
-    }, {});
+    return acc;
 
-    let dailyContent = "";
+  }, {});
 
-    dailyMarkdownTokens.forEach((token,idx,tokens) =>{
-
-      const weekRegex          = /\{\{\s?WDX:\s?WEEK\s?\}\}/gi;
-      const titleRegex         = /\{\{\s?WDX:\s?TITLE\s?\}\}/gi;
-      const dayRegex           = /\{\{\s?WDX:\s?DAY\s?\}\}/gi;
-      const scheduleRegex      = /\{\{\s?WDX:\s?DAILY_SCHEDULE\s?\}\}/gi;
-      const studyPlanRegex     = /\{\{\s?WDX:\s?STUDY_PLAN\s?\}\}/gi;
-      const summaryRegex       = /\{\{\s?WDX:\s?SUMMARY\s?\}\}/gi;
-      const exercisesRegex     = /\{\{\s?WDX:\s?EXERCISES\s?\}\}/gi;
-      const extrasRegex        = /\{\{\s?WDX:\s?EXTRAS\s?\}\}/gi;
-      const attributionsRegex  = /\{\{\s?WDX:\s?ATTRIBUTIONS\s?\}\}/gi;
-      const includesRegex      = /\{\{\s?WDX:\s?INCLUDES:(.*)\s?\}\}/gi;
-  
-      function replaceSection( section ){
-        return function( match ){
-          let dailyScheduleSection = "";
-
-          if (dailyContentObject[section].nextSection){
-            dailyScheduleSection = dailyContentObject[section].heading + dailyContentObject[section].nextSection;
-          } else {
-            dailyScheduleSection = `<!-- ${dailyContentObject[section].text.trim()} -->`
-          }
-
-          return dailyScheduleSection;
-        }
-      }
-
-      dailyContent += token.raw
-      .replace(weekRegex, `Week ${numOfWeek}`)
-      .replace(titleRegex, fm.title)
-      .replace(dayRegex, `Day ${day}`)
-      .replace(scheduleRegex, replaceSection("Schedule"))
-      .replace(studyPlanRegex, replaceSection("Study Plan"))
-      .replace(summaryRegex, replaceSection("Summary"))
-      .replace(exercisesRegex, replaceSection("Exercises"))
-      .replace(extrasRegex, replaceSection("Extra Resources"))
-      .replace(attributionsRegex, replaceSection("Sources and Attributions"))
-      .replace(includesRegex, (match, group1, string)=>{
-        const includeFile = path.join( includesFolder, group1.trim() + ".md" );
-        const contents = fs.readFileSync(includeFile, "utf-8");
-        return contents
-        .replace(weekRegex,String(numOfWeek).padStart(2,"0"))
-        .replace(dayRegex, String(day).padStart(2,"0"));
-      });
-
-      if ( (idx === (tokens.length - 1)) && (day !== "5") ){
-        dailyContent += "\n";
-      }
-
-    });
-
-    return dailyContent;
-
+  let dailyContent = "";
+  if ( day === "1" ){
+    // console.log(dailyContentObject['Summary']);
+    // console.log(dailyContentObject['Extra Resources']);
+    // console.log(dailyContentObject['Sources and Attributions']);
   }
+
+  // Go through the Markdown and replace all {{ WDX }} with content:
+  dailyMarkdownTokens.forEach((token,idx,tokens) =>{
+    
+    const {
+
+      weekRegex,
+      titleRegex,
+      dayRegex,
+      scheduleRegex,
+      studyPlanRegex,
+      summaryRegex,
+      exercisesRegex,
+      extrasRegex,
+      attributionsRegex,
+      includesRegex,
+
+    } = wdxTemplateRegexes;
+
+    // if ( day === "1" ) console.log(token);
+
+    dailyContent += token.raw
+    .replace(weekRegex, `Week ${numOfWeek}`)
+    .replace(titleRegex, fm.title)
+    .replace(dayRegex, `Day ${day}`)
+    .replace(scheduleRegex, replaceSectionFromObject("Schedule", dailyContentObject))
+    .replace(studyPlanRegex, replaceSectionFromObject("Study Plan", dailyContentObject))
+    .replace(summaryRegex, replaceSectionFromObject("Summary", dailyContentObject))
+    .replace(exercisesRegex, replaceSectionFromObject("Exercises", dailyContentObject))
+    .replace(extrasRegex, replaceSectionFromObject("Extra Resources", dailyContentObject))
+    .replace(attributionsRegex, replaceSectionFromObject("Sources and Attributions", dailyContentObject))
+    .replace(includesRegex, replaceInclude({ day, numOfWeek }));
+
+    if ( (idx === (tokens.length - 1)) && (day !== "5") ){
+      dailyContent += "\n";
+    }
+
+  });
+
+  return dailyContent;
 
 }
 
@@ -368,6 +452,7 @@ function init() {
       console.log(`Processing Syllabus: ${input}`);
       const outputContent = createSyllabusFromMarkdownText({ textContent, configYaml });
       fs.writeFileSync(output, outputContent, "utf-8");
+      // TODO: (Optionally) read all weeks (e.g. week01.yaml, week02.yaml, etc.) and generate all the content along with the curriculum/index.md
 
     } else {  // e.g. curriculum/schedule/week04.yaml
 
