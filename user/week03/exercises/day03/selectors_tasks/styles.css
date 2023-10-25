@@ -59,10 +59,9 @@ table tr:nth-child(2n) {
 h2 + p {
   color: red;
 }
-ul.list > li:first-child {
+ul.list > li {
   list-style-type: none;
   border-bottom: 1px solid gray;
-  background-color:yellow;
 }
 
 /*Task05*/
