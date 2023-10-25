@@ -1,0 +1,68 @@
+/**{
+    background-color:yellow;
+}*/
+/*Task01*/
+h1 {
+    color:blue;
+  }
+
+  h2 {
+    color: white;
+    background-color: blue;
+  }
+
+  span {
+    font-size: 200%;
+  }
+
+/*Task02*/
+#special {
+  background-color: yellow;
+}
+
+.alert {
+  border: 1px solid gray;
+}
+
+.alert.stop {
+  background-color: red;
+}
+
+.alert.go {
+  background-color: green;
+}
+
+/*Task03*/
+a:hover {
+  text-decoration: none;
+}
+a:link {
+  color: orange;
+}
+a:visited{
+  color: green;
+}
+
+.container p:first-child {
+  font-size: 150%;
+}
+.container p:first-child::first-line {
+  color: red;
+}
+
+table tr:nth-child(2n) {
+  background-color: #333;
+  color: white;
+}
+
+/*Task04*/
+h2 + p {
+  color: red;
+}
+ul.list > li:first-child {
+  list-style-type: none;
+  border-bottom: 1px solid gray;
+  background-color:yellow;
+}
+
+/*Task05*/
