@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Backgrounds and Borders: Task 2</title>
+    <style>
+      body {
+        background-color: #fff;
+        color: #333;
+        font: 1.2em / 1.5 Helvetica Neue, Helvetica, Arial, sans-serif;
+        padding: 1em;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      .box {
+        width: 300px;
+        padding: 0.5em;
+        border: 5px solid lightblue;
+        border-top-left-radius: 20px;
+        border-bottom-right-radius: 40px;
+      }
+      h2 {
+        background-image: url(/curriculum/week03/exercises/test_your_skills_backgrounds_and_borders/assets/star.png),
+            url(/curriculum/week03/exercises/test_your_skills_backgrounds_and_borders/assets/star.png);
+        background-repeat: no-repeat, repeat-y;
+        background-position: left, right;
+        text-align: center;
+        padding: 0 35px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="box">
+      <h2>Backgrounds &amp; Borders</h2>
+    </div>
+
+  </body>
+
+</html>
+
+<!--
+
+Give the box a 5px lightblue border and round the top left corner 20px and the bottom right corner 40px.
+
+The heading uses the star.png image as a background image, with a single centered star on the left and a repeating pattern of stars on the right.
+
+Make sure that the heading text does not overlay the image, and that it is centered — you will need to use techniques learned in previous lessons to achieve this.
+
+-->
