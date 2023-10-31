@@ -1,0 +1,114 @@
+/* General setup */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  min-width: 1000px;
+  max-width: 1400px;
+}
+
+/* Layout */
+
+section {
+  float: left;
+  width: 50%;
+}
+
+aside {
+  float: left;
+  width: 30%;
+}
+
+nav {
+  float: left;
+  width: 20%;
+}
+
+footer {
+  clear: both;
+}
+
+header, section, aside, nav, footer {
+  padding: 20px;
+}
+
+/* header and footer */
+
+header, footer {
+  border-top: 5px solid #a66;
+  border-bottom: 5px solid #a66;
+}
+
+/* WRITE YOUR CODE BELOW HERE */
+
+@font-face {
+  font-family: "roboto";
+  src: url(Roboto-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "playfair";
+  src: url(PlayfairDisplay-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+html{
+  font-family: "playfair", Times, serif;
+  font-size: 10px;
+}
+h1, h2 {
+  font-family: "roboto", Arial, Helvetica, sans-serif;
+  letter-spacing: 0.05em;
+}
+h1 {
+  font-size: 2.5em;
+  text-align: center;
+}
+h2 {
+  font-size: 2em;
+}
+p, li {
+  font-size: 1.7em;
+  line-height: 1.5em;
+  letter-spacing: 0.03em;
+  word-spacing: 0.05em;
+}
+
+section h2 + p {
+  text-indent: 20px;
+}
+
+a:link, a:visited, a:focus, a:hover {
+  color: rgb(139, 23, 23);
+}
+a:hover {
+  text-decoration: none;
+}
+a {
+  outline: none;
+}
+a:active{
+  color: chocolate;
+  text-decoration: none;
+  font-weight: bold;
+}
+a[href^="http"] {
+  background: url(external-link-52.png) no-repeat 100% 0 ;
+  background-size: 0.9em 0.9em;
+  padding-right: 1em;
+}
+
+ul{
+  list-style: none;
+}
+
+ul li:before{
+  content: "➤"; /* Insert content that looks like bullets */
+  padding-right: 8px;
+  color: #ff5e00; /
+  
+}
