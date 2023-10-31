@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure table</title>
+    <style>
+        html{
+            font-family: "helvetica neue", helvetica, arial, sans-serif;
+            color:#4c4c4c;
+            letter-spacing: 0.02em;
+        }
+        table {
+            border-collapse:collapse;
+            text-align: left;
+            border: 2px solid #2a74d7;
+            table-layout: fixed;
+            width: 1000px;
+        }
+        h1{
+            font-size: 2.2em;
+        }
+        p {
+            font-size: 1.3em;
+        }
+        thead th:nth-child(3) {
+            width:10%;
+        }
+        thead th:nth-child(4) {
+            width:15%;
+        }
+        thead th:nth-child(1) {
+            width:25%;
+        }
+        thead th:not(:last-child) {
+            border-right:2px solid rgb(155, 205, 248);
+        }
+        th, td{
+            padding: 1em;
+            vertical-align: middle;
+        }
+        thead th{
+            color:white;
+        }
+        thead th:nth-child(even){
+            background-color:#1f589f;
+        }
+        thead th:nth-child(odd){
+            background-color:#2a74d7;
+        }
+        tbody th, tbody td {
+            font-size: 0.95em;
+            line-height: 2em;
+        }
+        tbody td {
+            font-size: 0.8em;
+        }
+        tbody th:first-child{
+            border-right:2px solid #2a74d7;
+        }
+        tbody td:last-child{
+            border-left:1px solid #dfdfdf;
+        }
+        .courseID{
+            text-decoration: underline;
+        }
+        a, a:visited {
+            color: #2a74d7;
+        }
+    </style>
+</head>
+<body>
+    <h1>Course details for Azure Fundamentals</h1>
+    <p>1 Instructor-led training course</p>
+    <table>
+        <thead>
+            <th scope="col">Exam titles</th>
+            <th scope="col">Course title / training titles</th>
+            <th scope="col">Course ID</th>
+            <th scope="col">Course duration</th>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Microsoft Azure Fundamentals <br/> <a href="">EXAM AZ-900</a></th>
+                <td>Microsoft Azure Fundamentals</td>
+                <td><span class="courseID">AZ-900T01</span></td>
+                <td>1 Day</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
