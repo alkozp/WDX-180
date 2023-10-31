@@ -1,19 +1,6 @@
 ---
-title: Week 05 | CSS Frameworks
+title: Practice with Form Input fields
 ---
-
-# Week 05 | CSS Frameworks
-
-_(Updated: 31/10/2023)_
-
----
-
-<!-- Week 05 - Day 1 | Practice with Form Input fields -->
-<details markdown="1">
-  <summary>
-    <h2>
-      <span class="summary-day">Week 05 - Day 1</span> | Practice with Form Input fields</h2>
-  </summary>
 
 ### Schedule
 
@@ -25,8 +12,6 @@ _(Updated: 31/10/2023)_
 
   <!-- ![](assets/css.bg.media.sizing.png) -->
 
-
-
   > Inspirational quote of the week:
   >
   > ___"If I ran a school, I’d give the average grade to the ones 
@@ -36,11 +21,7 @@ _(Updated: 31/10/2023)_
   >
   > R. Buckminster Fuller
 
-
-
   ---
-
-
 
   This Module is about replicating some real-life User Interfaces and specifically the form fields found in the [**YouTube Studio**](https://www.youtube.com/playlist?list=PLpjK416fmKwQ42eDY75Q05uM0g3N9WNXU) video editor page.
 
@@ -52,7 +33,7 @@ _(Updated: 31/10/2023)_
 
   Scroll down to the [**Exercises section**](#exercises) to find all the details and start the project. 
 
-<!-- Summary -->
+### Summary
 
 ### Exercises
 
@@ -101,25 +82,6 @@ We are basically creating a single `<input>` form field of type `text`. In the s
 
 - [Input pseudo-classes](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes#input_pseudo-classes){:target="_blank"}
 
-  **IMPORTANT:** Make sure to complete all the tasks found in the **daily Progress Sheet** and update the sheet accordingly. Once you've updated the sheet, don't forget to `commit` and `push`. The progress draft sheet for this day is: **/user/week05/progress/progress.draft.w05.d01.csv**
+### Extra Resources
 
-  You should **NEVER** update the `draft` sheets directly, but rather work on a copy of them according to the instructions [found here](../week01/resources/PROGRESS-WORKFLOW.md).
-
-
-<!-- Extra Resources -->
-
-<!-- Sources and Attributions -->
-  
-</details>
-
-<hr class="mt-1">
-
-
-
-<hr class="mt-1">
-
-**Weekly feedback:** Hey, it's really important for us to know how your experience with the course has been so far, so don't forget to fill in and submit your [**mandatory** feedback form](https://forms.gle/S6Zg3bbS2uuwsSZF9){:target="_blank"} before the day ends. Thanks you!
-
-## Week 05 - Weekend Suggestions
-
-If you are in the mood of enjoying related content during the weekend, check out our weekly recommendations [here](WEEKEND.md).
+### Sources and Attributions
