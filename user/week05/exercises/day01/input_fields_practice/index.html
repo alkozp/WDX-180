@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input fields practice</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="counter.js"></script>
+</head>
+<body>
+    <h1>Input fields practice</h1>
+    <form action="">
+        <fieldset>
+            <ul>
+                <li>
+                    <label for="user_text">Enter your message:</label>
+                </li>
+                <li>
+                    <input type="text" name="user_text" id="user_text"
+                    placeholder="enter you message"
+                    title="Use only A-Z z-a 0-9 ! @ _ - $ ( ) characters"
+                    pattern="[0-9A-Za-z!@_\-$\(\)]{1,30}">
+                    <span class="counter">0/30 characters</span>
+                    <div class="error_block"><span>Error: Invalid input</span></div>
+                </li>
+            </ul>
+        </fieldset>
+    </form>
+</body>
+</html>

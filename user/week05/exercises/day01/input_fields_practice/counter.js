@@ -1,0 +1,1 @@
+//count character in input field

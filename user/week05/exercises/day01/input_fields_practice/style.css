@@ -1,0 +1,70 @@
+:root {
+    --main-bg-color: #282828;
+    --main-txt-color: white;
+    --input-txt-color: #d0d0d0;
+    --input-placeholder-txt-color: #767676;
+    --input-border-color:#4c4c4c;
+    --input-border-color-hover:#8f8f8f;
+    --input-border-color-focus: #7c9dbd;
+    --input-border-color-validation-error: #862e2a;
+}
+
+html{
+    background-color: var(--main-bg-color);
+    color: var(--main-txt-color);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+ul li {
+    list-style: none;
+    padding: 0.3rem;    
+    font-size: 0.7rem;
+    color: var(--input-txt-color)
+}
+
+li span {
+    font-size: 0.7rem;
+    color: var(--input-placeholder-txt-color) 
+}
+
+input {
+    color: var(--input-txt-color);
+    background-color: var(--main-bg-color);
+    border: 2px solid var(--input-border-color);
+    padding: 0.5rem;
+    font-size: 0.7rem;
+    width: 200px;
+    margin-right: 1rem;
+}
+
+input:hover {
+    border-color: var(--input-border-color-hover);
+}
+
+input:focus {
+    border-color: var(--input-border-color-focus);
+    outline: none;
+}
+input:invalid {
+    border-color: var(--input-border-color-validation-error);
+}
+
+.error_block{
+    margin-top: 1.5rem;
+}
+
+.error_block > span{
+    color: var(--input-txt-color);
+    background-color: var(--input-border-color-validation-error);
+    padding: 0.5rem;
+}
+
+input:valid ~ .error_block {
+    visibility: hidden;
+}
+
+input:invalid ~ .error_block {
+    visibility: visible;
+}
+
