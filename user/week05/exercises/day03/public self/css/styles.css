@@ -1,0 +1,206 @@
+:root {
+    --dark-bg-color: #2b2d33;
+    --light-bg-color: #ffffff;
+    --main-aside-bg-light-color: #00cccc;
+    --main-aside-bg-dark-color: #2b2d33;
+    --main-bg-color: #ffffff;
+
+    
+    --header-footer-text-color: #00cccc;
+    --header-footer-text-hover-color: #ffffff;
+    --main-text-color: #2b2d33;
+
+    --aside-divide-color: #00a0a0;
+    --aside-border-color: #88c5c5;
+
+    --image-outline-color: #cdcdcd;
+
+
+}
+/************************************************************/
+/*typography elements*/
+.header-footer-text-style {
+    color: var(--header-footer-text-color);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-weight: 800;
+    font-size: 0.9rem;
+}
+
+.main-text-style {
+    color: var(--main-text-color);
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+/************************************************************/
+/*special elements*/
+.wrapper {
+    height: 100vh;
+
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-justify-between {
+    justify-content: space-between;
+}
+
+.flex-justify-center {
+    justify-content: center;
+}
+
+.flex-align-items-center {
+    align-items: center;
+}
+
+.container{
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.reset-ua-style {
+    list-style: none;
+    margin: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+}
+
+.decor-ribbon {
+    background-image: url(../images/border.png);
+    background-repeat: repeat-x;
+}
+
+/**************************************************************/
+/* elements on page */
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+/*header elements*/
+header {
+    background-color: var(--dark-bg-color);
+}
+
+#logo {
+    padding: 2.5rem 0;
+    font-size: 3.2rem;
+    letter-spacing: 0.6rem;
+    font-weight: 600;
+}
+
+#logo img {
+    /* width: 4.2rem; */
+    margin: 0 -2.5rem -1rem;
+    position: relative;
+}
+
+#header-menu ul li {
+    font-size: 0.9rem;
+    padding: 0 1.95rem 1rem 0;
+    border-bottom: 4px solid var(--header-footer-text-color);
+    text-align: center;
+}
+
+#header-menu ul li:last-child{
+    padding-right: 0;
+}
+
+#header-menu ul li:hover {
+    color: var(--header-footer-text-hover-color);
+    border-color: var(--header-footer-text-hover-color);
+    cursor: pointer;
+}
+
+/*main elements*/
+main {
+    flex-grow: 1;
+    background-color: var(--main-bg-color);
+    
+}
+
+#game-image img {
+    border: 4px solid var(--main-aside-bg-dark-color);
+    outline: 3px solid var(--image-outline-color);
+    
+}
+
+#game-features ul {
+    border: 2px solid var(--aside-border-color);
+    padding-left: 0;
+}
+
+#game-features ul li {
+    color: var(--main-aside-bg-dark-color);
+    background-color: var(--main-aside-bg-light-color);
+    padding: 1.1rem 3rem;
+    text-align: center;
+    border-bottom: 1px solid var(--aside-divide-color);
+    border: 2px solid var(--aside-border-color);
+}
+
+#game-features ul li:first-child {
+    color: var(--main-aside-bg-light-color);
+    background-color: var(--main-aside-bg-dark-color);
+}
+
+#game-features ul li:last-child {
+    border-bottom: none;
+}
+
+#game-features ul li span {
+    color: var(--header-footer-text-hover-color);
+}
+
+#game-description {
+    margin-top: 2rem;
+}
+
+/*footer elements*/
+footer {
+    background-color: var(--dark-bg-color);
+}
+
+footer div {
+    padding: 3rem 0;
+    margin: 1rem 0;
+}
+
+footer div section {
+    flex-grow: 1;
+}
+
+footer div section ul {
+    border-left: 3px solid var(--header-footer-text-color);
+}
+
+footer div section ul li {
+    padding: 0 0 1rem 1.7rem;
+}
+footer div section ul li:last-child {
+    padding: 0 1.7rem;
+}
+
+footer div section ul li:hover {
+    color: var(--header-footer-text-hover-color);
+    border-color: var(--header-footer-text-hover-color);
+    cursor: pointer; 
+}
+
+#copyright {
+    background-color: var(--header-footer-text-color);
+    color: var(--main-text-color);
+    text-align: center;
+    padding: 0.5rem 0;
+    margin-bottom: 3rem;
+}
