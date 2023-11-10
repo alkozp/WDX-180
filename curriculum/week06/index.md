@@ -9,7 +9,7 @@ load_script_js_via_src:
   <span class="week-prefix">Week 06 |</span> JavaScript Core 1
 </h1>
 
-_(Updated: 8/11/2023)_
+_(Updated: 9/11/2023)_
 
 ---
 
@@ -1543,6 +1543,8 @@ _(Updated: 8/11/2023)_
 
   console.log(courses);
   ```
+
+  [&#9658; Live coding](#flems-enable)
 
   The first thing we do is add an element to the end using the push function that arrays have. It "pushes" the element on the end.
 

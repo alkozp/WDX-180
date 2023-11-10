@@ -48,4 +48,8 @@ console.log( a * b );
 [&#9658; Live coding](#flems-enable)
 
 
+```js
+console.log(Math.random());
+```
 
+[&#9658; Live coding](#flems-enable)
