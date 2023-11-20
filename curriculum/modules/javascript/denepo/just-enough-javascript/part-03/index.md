@@ -10,22 +10,28 @@ title: Just Enough JavaScript - Part 3
 
 ### Study Plan
 
-  `cd study-lenses`
-  `git checkout lenses2`
-  `npm link` or `sudo npm link`
+  In this Module, we are continuing our journey into "Just enough JavaScript".
 
-  `lenses2 curriculum/modules/javascript/denepo/_just-enough-javascript/`
+  Make sure to follow the guides on **Setting up Study Lenses (v2) on your System** and **Launching Study Lenses and following the material** from Day 01 and then go through the following sections:
 
-  Go through:
-
-  - 09-
-  - ...
-  - 12-
+ 
+  - **09-interactions**
+  - **10-numbers**
+  - **11-block-scope**
+  - **12-conditionals**
 
 ### Summary
 
 ### Exercises
 
+  <!-- WDX:META:PROGRESS:task=Explore the '09-interactions' section of 'Just Enough JavaScript' -->
+
+  <!-- WDX:META:PROGRESS:task=Explore the '10-numbers' section of 'Just Enough JavaScript' -->
+
+  <!-- WDX:META:PROGRESS:task=Explore the '11-block-scope' section of 'Just Enough JavaScript' -->
+
+  <!-- WDX:META:PROGRESS:task=Explore the '12-conditionals' section of 'Just Enough JavaScript' -->
+  
 ### Extra Resources
 
   _(Nothing here yet. Feel free to contribute if you've found some useful resources.)_
