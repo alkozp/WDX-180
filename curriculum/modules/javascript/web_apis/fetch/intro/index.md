@@ -10,14 +10,15 @@ title: Introduction to Fetch API
 
 ### Study Plan
 
-<!-- TODO: Keep this structure and create SGEN feature for link creation of units/modules -->
-- [Read: **Introduction to JSON**](../modules/javascript/web_apis/fetch/30-days-of-javascript/index.md){:target="_blank"}
+  - [Read: **Fetch API and Async/Await**](../modules/javascript/web_apis/fetch/30-days-of-javascript/index.md){:target="_blank"}
 
 ### Summary
 
 ### Exercises
 
-  Copy the [fetch.js](./exercises/fetch.js) file and load it on an HTML file called `fetch.html` and compete all the challenges found inside.
+  **Fetch Basics**
+
+  Copy the folder `curriculum/week{{ SGEN:WEEK_NUM }}/exercises/fetch_basics/` inside folder `user/week{{ SGEN:WEEK_NUM }}/exercises/day{{ SGEN:DAY_NUM }}/` and compete all the challenges found inside the JavaScript file.
 
 ### Extra Resources
 

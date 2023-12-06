@@ -10,8 +10,7 @@ title: Introduction to JSON
 
 ### Study Plan
 
-<!-- TODO: Keep this structure and create SGEN feature for link creation of units/modules -->
-- [Read: **Introduction to JSON**](../modules/javascript/core/json/30-days-of-javascript/index.md){:target="_blank"}
+  - [Read: **Introduction to JSON**](../modules/javascript/core/json/30-days-of-javascript/index.md){:target="_blank"}
 
 ### Summary
 
@@ -19,7 +18,9 @@ title: Introduction to JSON
 
 ### Exercises
 
-  Copy the [json.js](./exercises/json.js) file and load it on an HTML file called `json.html` and compete all the challenges found inside.
+  **JSON Basics**
+
+  Copy the folder `curriculum/week{{ SGEN:WEEK_NUM }}/exercises/json_basics/` inside folder `user/week{{ SGEN:WEEK_NUM }}/exercises/day{{ SGEN:DAY_NUM }}/` and compete all the challenges found inside the JavaScript file.
 
 ### Extra Resources
 

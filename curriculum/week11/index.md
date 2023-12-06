@@ -1,5 +1,5 @@
 ---
-title: Week 11 | Web APIs 2: Promises, JSON, Fetch API
+title: "Week 11 | Web APIs 2: Promises, JSON, Fetch API"
 ---
 
 <hr class="mb-0">
@@ -24,7 +24,7 @@ title: Week 11 | Web APIs 2: Promises, JSON, Fetch API
 
   </h2>
 
-  <span>Updated: 4/12/2023</span>
+  <span>Updated: 5/12/2023</span>
 
   <h2 class="week-controls__next_week">
 
@@ -57,10 +57,7 @@ title: Week 11 | Web APIs 2: Promises, JSON, Fetch API
 
 ### Study Plan
 
-<!-- TODO: Keep this structure and create SGEN feature for link creation of units/modules -->
-
-
-- [Read: **Introduction to JSON**](../modules/javascript/core/json/30-days-of-javascript/){:target="_blank"}
+  - [Read: **Introduction to JSON**](../modules/javascript/core/json/30-days-of-javascript/index.md){:target="_blank"}
 
 ### Summary
 
@@ -68,7 +65,9 @@ title: Week 11 | Web APIs 2: Promises, JSON, Fetch API
 
 ### Exercises
 
-  Copy the [json.js](./exercises/json.js) file and load it on an HTML file called `json.html` and compete all the challenges found inside.
+  **JSON Basics**
+
+  Copy the folder `curriculum/week11/exercises/json_basics/` inside folder `user/week11/exercises/day01/` and compete all the challenges found inside the JavaScript file.
 
   **IMPORTANT:** Make sure to complete all the tasks found in the **daily Progress Sheet** and update the sheet accordingly. Once you've updated the sheet, don't forget to `commit` and `push`. The progress draft sheet for this day is: **/user/week11/progress/progress.draft.w11.d01.csv**
 
@@ -106,10 +105,7 @@ title: Week 11 | Web APIs 2: Promises, JSON, Fetch API
 
 ### Study Plan
 
-<!-- TODO: Keep this structure and create SGEN feature for link creation of units/modules -->
-
-
-- [Read: **Introduction to Promises**](../modules/javascript/async/promises/30-days-of-javascript/index.md){:target="_blank"}
+  - [Read: **Introduction to Promises**](../modules/javascript/async/promises/30-days-of-javascript/index.md){:target="_blank"}
 
 <!-- Summary -->
 
@@ -146,16 +142,15 @@ title: Week 11 | Web APIs 2: Promises, JSON, Fetch API
 
 ### Study Plan
 
-<!-- TODO: Keep this structure and create SGEN feature for link creation of units/modules -->
-
-
-- [Read: **Introduction to JSON**](../modules/javascript/web_apis/fetch/30-days-of-javascript/index.md){:target="_blank"}
+  - [Read: **Fetch API and Async/Await**](../modules/javascript/web_apis/fetch/30-days-of-javascript/index.md){:target="_blank"}
 
 <!-- Summary -->
 
 ### Exercises
 
-  Copy the [fetch.js](./exercises/fetch.js) file and load it on an HTML file called `fetch.html` and compete all the challenges found inside.
+  **Fetch Basics**
+
+  Copy the folder `curriculum/week11/exercises/fetch_basics/` inside folder `user/week11/exercises/day03/` and compete all the challenges found inside the JavaScript file.
 
   **IMPORTANT:** Make sure to complete all the tasks found in the **daily Progress Sheet** and update the sheet accordingly. Once you've updated the sheet, don't forget to `commit` and `push`. The progress draft sheet for this day is: **/user/week11/progress/progress.draft.w11.d03.csv**
 
