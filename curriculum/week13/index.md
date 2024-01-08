@@ -1,12 +1,14 @@
 ---
-title: Week 13 | JavaScript Intermediate 1 & Git
+title: Week 13 | Intermediate JavaScript
 ---
 
 <hr class="mb-0">
 
-<h1 id="{{ Week 13-JavaScript Intermediate 1 & Git | slugify }}">
-  <span class="week-prefix">Week 13 |</span> JavaScript Intermediate 1 & Git
+<h1 id="{{ Week 13-Intermediate JavaScript | slugify }}">
+  <span class="week-prefix">Week 13 |</span> Intermediate JavaScript
 </h1>
+
+<img src="assets/colorful.03.png" />
 
 <div class="week-controls">
 
@@ -15,16 +17,16 @@ title: Week 13 | JavaScript Intermediate 1 & Git
   <h2 class="week-controls__previous_week">
 
     <!-- ADD CHECK FOR WEEK open:true (remove if false) -->
-    {% if week_num > 0 %}
+    {% if false and week_num > 0 %}
 
       {% assign previous_week_num = 13 | to_integer | minus: 1 | prepend: '00' | slice: -2, 2 %}
 
-      <a href="/WDX-180/curriculum/week{{ previous_week_num }}">Week {{ previous_week_num }} &#8678;</a>
+      <a href="../week{{ previous_week_num }}">Week {{ previous_week_num }} &#8678;</a>
     {% endif %}
 
   </h2>
 
-  <span>Updated: 11/12/2023</span>
+  <span>Updated: 8/1/2024</span>
 
   <h2 class="week-controls__next_week">
 
@@ -33,7 +35,7 @@ title: Week 13 | JavaScript Intermediate 1 & Git
 
       {% assign next_week_num = 13 | to_integer | plus: 1 | prepend: '00' | slice: -2, 2 %}
 
-      <a href="/WDX-180/curriculum/week{{ next_week_num }}">&#8680; Week {{ next_week_num }}</a>
+      <a href="../week{{ next_week_num }}">&#8680; Week {{ next_week_num }}</a>
     {% endif %}
 
   </h2>
@@ -42,11 +44,38 @@ title: Week 13 | JavaScript Intermediate 1 & Git
 
 ---
 
-<!-- Week 13 - Day 4 | CSS Object Model -->
+<!-- Week 13 - Day 1 | Intermediate JavaScript -->
 <details markdown="1">
   <summary>
     <h2>
-      <span class="summary-day">Week 13 - Day 4</span> | CSS Object Model</h2>
+      <span class="summary-day">Week 13 - Day 1</span> | Intermediate JavaScript</h2>
+  </summary>
+
+### Schedule
+
+  - **Lecture: Intermediate JavaScript**
+  - **Practice**
+  - **Work on Project (Group/Personal)**
+
+<!-- Study Plan -->
+
+<!-- Summary -->
+
+<!-- Exercises -->
+
+<!-- Extra Resources -->
+
+<!-- Sources and Attributions -->
+  
+</details>
+
+<hr class="mt-1">
+
+<!-- Week 13 - Day 2 | CSS Object Model -->
+<details markdown="1">
+  <summary>
+    <h2>
+      <span class="summary-day">Week 13 - Day 2</span> | CSS Object Model</h2>
   </summary>
 
 ### Schedule
@@ -135,11 +164,38 @@ title: Week 13 | JavaScript Intermediate 1 & Git
 
 <hr class="mt-1">
 
-<!-- Week 13 - Day 5 | Advanced CSS -->
+<!-- Week 13 - Day 3 | Intermediate JavaScript -->
 <details markdown="1">
   <summary>
     <h2>
-      <span class="summary-day">Week 13 - Day 5</span> | Advanced CSS</h2>
+      <span class="summary-day">Week 13 - Day 3</span> | Intermediate JavaScript</h2>
+  </summary>
+
+### Schedule
+
+  - **Lecture: Intermediate JavaScript**
+  - **Practice**
+  - **Work on Project (Group/Personal)**
+
+<!-- Study Plan -->
+
+<!-- Summary -->
+
+<!-- Exercises -->
+
+<!-- Extra Resources -->
+
+<!-- Sources and Attributions -->
+  
+</details>
+
+<hr class="mt-1">
+
+<!-- Week 13 - Day 4 | Advanced CSS -->
+<details markdown="1">
+  <summary>
+    <h2>
+      <span class="summary-day">Week 13 - Day 4</span> | Advanced CSS</h2>
   </summary>
 
 ### Schedule
@@ -152,7 +208,17 @@ title: Week 13 | JavaScript Intermediate 1 & Git
 
 ### Summary
 
-  We are going to explore some pretty useful and cool CSS features (that you probably didn't know exist). Let's go!
+  ![](https://in-tech-gration.github.io/WDX-180/curriculum/modules/javascript/misc/post_mortem/assets/post_mortem.png)
+
+  Let's begin by reading about [What is a Software Post-Mortem and How Do You Write One?](https://www.freecodecamp.org/news/what-is-a-software-post-mortem/){:target="_blank"}
+
+  After having read the article, open up the code [found here](https://github.com/in-tech-gration/WDX-180/tree/main/curriculum/modules/javascript/misc/post_mortem){:target="_blank"} debug the program and write a short post mortem.
+
+  ---
+
+
+
+  Next, we are going to explore some pretty useful and cool CSS features (that you probably didn't know exist). Let's go!
 
   - Go through [**this article**](https://www.lambdatest.com/blog/advanced-css-tricks-and-techniques/){:target="_blank"} that covers quite a lot of features. For each one, you should check the appropriate MDN article for more details and play around with the feature in your local development environment. Perhaps it's a good idea at this point to create a file named `advanced-css-tricks.html` and work on it.
 
@@ -191,11 +257,35 @@ title: Week 13 | JavaScript Intermediate 1 & Git
   
 </details>
 
+<hr class="mt-1">
+
+<!-- Week 13 - Day 5 | Intermediate JavaScript -->
+<details markdown="1">
+  <summary>
+    <h2>
+      <span class="summary-day">Week 13 - Day 5</span> | Intermediate JavaScript</h2>
+  </summary>
+
+### Schedule
+
+  - **Lecture: Intermediate JavaScript**
+  - **Practice**
+  - **Work on Project (Group/Personal)**
+
+<!-- Study Plan -->
+
+<!-- Summary -->
+
+<!-- Exercises -->
+
+<!-- Extra Resources -->
+
+<!-- Sources and Attributions -->
+  
+</details>
+
 
 <hr class="mt-1">
 
 **Weekly feedback:** Hey, it's really important for us to know how your experience with the course has been so far, so don't forget to fill in and submit your [**mandatory** feedback form](https://forms.gle/S6Zg3bbS2uuwsSZF9){:target="_blank"} before the day ends. Thanks you!
 
-## Week 13 - Weekend Suggestions
-
-If you are in the mood of enjoying related content during the weekend, check out our weekly recommendations [here](WEEKEND.md).
