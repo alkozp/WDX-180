@@ -16,5 +16,6 @@ title: BUG JOURNAL
 * Trying use `of` statement for object loop instead `in`. remember for object `for (iterate in object)` 
 
 
-
+## 03/01/24 GitHub Actions
+* Play with GHA ==> Used automatic tabs in VSC ==> yaml files waiting spaces
 
