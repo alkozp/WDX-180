@@ -44,11 +44,23 @@ function click(e){
   e.target.style.background = e.target.style.background === "red" ? "green" : "red";  
 }
 
+// function tracker( fn ){
+//   // Your code here...
+//   return (e)=>{
+//     const clickCount = performance.eventCounts.get("click")+1;
+//     console.log(`Toggled ${clickCount} times!`);
+//     fn(e);
+//   };
+// }
+
 function tracker( fn ){
   // Your code here...
   return (e)=>{
-    const clickCount = performance.eventCounts.get("click")+1;
-    console.log(`Toggled ${clickCount} times!`);
+    if(!document.buttonCounter){
+      document.buttonCounter = 0;
+    }
+    document.buttonCounter++;
+    console.log(`Toggled ${document.buttonCounter} times!`);
     fn(e);
   };
 }
