@@ -110,14 +110,7 @@ function cellClickHandler (event){
   //count clicks and stop moves if endgame
   clickCounter++;
   
-  if (clickCounter > 9) {
-    //stop game
-    if (btnRestart.className === "hidden"){
-      btnRestart.className = "visible";
-    }
-    return undefined;
-  }
-
+  
   if ( event.target.innerText.trim().length !== 0 ){
     return false;
   }
@@ -134,6 +127,14 @@ function cellClickHandler (event){
     }
     clickCounter = 10;
     btnRestart.className = "visible";
+  }
+
+  if (clickCounter >= 9) {
+    //stop game
+    if (btnRestart.className === "hidden"){
+      btnRestart.className = "visible";
+    }
+    return undefined;
   }
 
 }
